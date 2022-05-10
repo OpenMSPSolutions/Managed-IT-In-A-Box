@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -12,12 +11,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([PermissionSeeder::class]);
 
-        $user = User::factory(['email' => 'info@geisi.dev'])
-            ->withPersonalTeam()
-            ->hasAttached(Team::factory()->count(3))
+        $user = User::factory(['name' => 'Administrator', 'email' => 'admin@msp.com'])
+            ->withTeam()
             ->create();
 
         setPermissionsTeamId(1);
-        $user->assignRole('Admin');
+        $user->assignRole('Org Admin');
     }
 }

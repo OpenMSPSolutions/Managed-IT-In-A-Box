@@ -12,19 +12,64 @@ class PermissionSeeder extends Seeder
     {
         //Some initially role configuration
         $roles = [
-            'Admin' => [
-                'view posts',
-                'create posts',
-                'update posts',
-                'delete posts',
+            'Org Admin' => [
+            //Org Permisions
+                //Internal User Permissions
+                'view org_users',
+                'create org_users',
+                'update org_users',
+                'delete org_users',
+
+                //Internal Queue Permissions
+                'view queues',
+                'create queues',
+                'update queues',
+                'delete queues',
+
+                //Ticket Permissions
+                'view tickets',
+                'create tickets',
+                'update tickets',
+                'delete tickets',
+
+            //Client Permisions
+                //Client Info Permissions
+                'view clients',
+                'create clients',
+                'update clients',
+                'delete clients',
+
+                //Client User Permissions
+                'view client_users',
+                'create client_users',
+                'update client_users',
+                'delete client_users',
             ],
-            'Editor' => [
-                'view posts',
-                'create posts',
-                'update posts'
-            ],
-            'Member' => [
-                'view posts'
+            'Org User' => [
+            //Org Permisions
+                //Internal User Permissions
+                'view org_users',
+                'create org_users',
+                'update org_users',
+
+                //Internal Queue Permissions
+                'view queues',
+
+                //Ticket Permissions
+                'view tickets',
+                'create tickets',
+                'update tickets',
+
+            //Client Permisions
+                //Client Info Permissions
+                'view clients',
+                'create clients',
+                'update clients',
+
+                //Client User Permissions
+                'view client_users',
+                'create client_users',
+                'update client_users',
             ]
         ];
 

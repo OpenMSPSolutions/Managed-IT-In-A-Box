@@ -15,7 +15,7 @@ class DeleteTeamTest extends TestCase
 
     public function test_teams_can_be_deleted()
     {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->withTeam()->create());
 
         $user->ownedTeams()->save($team = Team::factory()->make([
             'personal_team' => false,
@@ -34,7 +34,7 @@ class DeleteTeamTest extends TestCase
 
     public function test_personal_teams_cant_be_deleted()
     {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        $this->actingAs($user = User::factory()->withTeam()->create());
 
         $component = Livewire::test(DeleteTeamForm::class, ['team' => $user->currentTeam])
                                 ->call('deleteTeam')

@@ -35,7 +35,8 @@ class CreateNewUser implements CreatesNewUsers
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
-                $this->createTeam($user);
+                //Disabling creations of personal themes
+                // $this->createTeam($user);
             });
         });
     }
