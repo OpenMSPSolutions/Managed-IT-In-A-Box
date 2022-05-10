@@ -12,10 +12,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([PermissionSeeder::class]);
 
-        User::factory(['email' => 'info@geisi.dev'])
+        $user = User::factory(['email' => 'info@geisi.dev'])
             ->withPersonalTeam()
             ->hasAttached(Team::factory()->count(3))
             ->create();
 
+        setPermissionsTeamId(1);
+        $user->assignRole('Admin');
     }
 }
