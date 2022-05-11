@@ -26,8 +26,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    Route::get('/organization/users', function () {
-        return view('organization/users');
-    })->name('organization.users.show');
 });
+
+
+Route::prefix('organization')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'team'
+])->name('organization.')->group(base_path('routes/web/organization.php'));
