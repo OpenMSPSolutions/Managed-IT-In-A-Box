@@ -16,7 +16,7 @@ class OrgUsersControler extends Controller
     public function index()
     {
         // SHow all of Org users and manage them
-        return view('admin/organization/users', ['orgUsers' => User::where('user_type', '=', '0')->paginate(25)]);
+        return view('admin/organization/users/users', ['orgUsers' => User::where('user_type', '=', '0')->paginate(25)]);
     }
 
     /**
@@ -26,11 +26,11 @@ class OrgUsersControler extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/organization/users/create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
