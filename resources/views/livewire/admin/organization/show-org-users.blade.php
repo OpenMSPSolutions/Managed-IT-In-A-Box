@@ -18,7 +18,7 @@
                                 Active
                             </th>
                             <th scope="col" class="w-2/16 text-sm font-medium text-gray-900 px-6 py-4 text-right">
-                                <a href="{{ url('/organization/users/create') }}">
+                                <a href="{{ route('organization.users.create') }}">
                                     <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
                                         Create User
                                     </button>
