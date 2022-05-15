@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 
 class PermissionSeeder extends Seeder
 {
@@ -74,7 +74,7 @@ class PermissionSeeder extends Seeder
         ];
 
         collect($roles)->each(function ($permissions, $role) {
-            $role = Role::findOrCreate($role);
+            $role = Role::findOrCreateWithRole($role, 0);
             collect($permissions)->each(function ($permission) use ($role) {
                 $role->permissions()->save(Permission::findOrCreate($permission));
             });

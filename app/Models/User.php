@@ -67,4 +67,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    /**
+     * Return true if user is an internal operator
+     *
+     */
+    public function isOperator() {
+        return $this->role_type == 0;
+    }
 }

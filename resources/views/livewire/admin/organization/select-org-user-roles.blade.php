@@ -1,9 +1,8 @@
-<div>
+<div class="w-full">
     <div wire:ignore>
-        <select class="form-control" id="select2-dropdown" multiple>
-            {{-- <option value="" multiple="multiple">Select Option</option> --}}
-            @foreach($webseries as $item)
-            <option value="{{ $item }}">{{ $item }}</option>
+        <select class="w-full form-control" id="select2-dropdown" name="user_roles" wire:model="ottPlatform" multiple>
+            @foreach($orgRoles as $item)
+                <option value="{{ $item->name }}">{{ $item->name }}</option>
             @endforeach
         </select>
     </div>
@@ -13,8 +12,8 @@
     $(document).ready(function () {
         $('#select2-dropdown').select2();
         $('#select2-dropdown').on('change', function (e) {
-            var data = $('#select2-dropdown').select2("val");
-            @this.set('ottPlatform', data);
+            @this.set('ottPlatform', $(this).val());
+            console.log('it change');
         });
     });
 </script>

@@ -65,7 +65,23 @@ class TeamPolicy
      */
     public function addTeamMember(User $user, Team $team)
     {
-        return $user->ownsTeam($team);
+        //Check if this is the internal team, the user belongs to the team, and has the proper permissions
+        if ($team->id == 1 && $user->belongsToTeam($team)) {
+            return true;
+        }
+
+        //Check if user is internal operator and can add client users
+        if ($team->id != 1 && $user->isOperator()) {
+            return $user->hasPermissionTo('create org_users');
+        }
+
+        //Check if this is a client team, the user belongs to the team, and has the proper permissions
+        if ($team->id != 1 && $user->belongsToTeam($team)) {
+            return $user->hasPermissionTo('create org_users');
+        }
+
+        //Default return false
+        return false;
     }
 
     /**
