@@ -50,20 +50,21 @@
 
 @push('scripts')
 <script>
-    // $(document).ready(function () {
-    //     $('#user_roles').on('select2:select', function (e) {
-    //         console.log(e)
-    //     });
+    $(document).ready(function () {
+        $('#user_roles').select2();
+        $('#user_roles').on('select2:select', function (e) {
+            console.log(e)
+        });
 
-    //     $('#user_roles').select2();
-    //     $('#user_roles').on('change', function (e) {
-    //         let data = $(this).val();
-    //         @this.set('user_roles', data);
-    //         console.log(data)
-    //     });
-    //     window.livewire.on('productStore', () => {
-    //         $('#user_roles').select2();
-    //     });
-    // });
+        // $('#user_roles').select2();
+        // $('#user_roles').on('change', function (e) {
+        //     let data = $(this).val();
+        //     @this.set('user_roles', data);
+        //     console.log(data)
+        // });
+        // window.livewire.on('productStore', () => {
+        //     $('#user_roles').select2();
+        // });
+    });
 </script>
 @endpush
