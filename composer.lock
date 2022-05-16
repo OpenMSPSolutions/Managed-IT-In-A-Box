@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "47f9b6edea3b88fb39e15becd208a067",
+    "content-hash": "dcade3e73feca8c8068219d6df539f73",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -119,6 +119,66 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "chuckcms/laravel-addresses",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pistone10/laravel-addresses.git",
+                "reference": "a48a4d27465eedc97863dee750004ed93334c730"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pistone10/laravel-addresses/zipball/a48a4d27465eedc97863dee750004ed93334c730",
+                "reference": "a48a4d27465eedc97863dee750004ed93334c730",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/database": "^6.0|^7.0|^8.0|^9.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Chuckcms\\Addresses\\AddressesServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Chuckcms\\Addresses\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karel Brijs",
+                    "email": "karel@chuck.be",
+                    "homepage": "https://chuck.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A ChuckCMS module for storing addresses.",
+            "homepage": "https://github.com/chuckcms/laravel-addresses",
+            "keywords": [
+                "addresses",
+                "chuckcms",
+                "laravel",
+                "module"
+            ],
+            "support": {
+                "source": "https://github.com/pistone10/laravel-addresses/tree/main"
+            },
+            "time": "2022-05-16T01:59:58+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -8443,7 +8503,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "chuckcms/laravel-addresses": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
