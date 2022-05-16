@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('team_id');
+            $table->tinyInteger('active')->default(0);
             $table->string('name');
             $table->string('phone_number')->nullable();
             $table->foreignId('primary_user_id')->nullable();

@@ -34,4 +34,11 @@ Route::prefix('organization')->middleware([
     config('jetstream.auth_session'),
     'verified',
     'team'
-])->name('organization.')->group(base_path('routes/web/organization.php'));
+])->name('organization.')->group(base_path('routes/web/admin/organization.php'));
+
+Route::prefix('clients')->middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+    'team'
+])->name('clients.')->group(base_path('routes/web/admin/clients.php'));

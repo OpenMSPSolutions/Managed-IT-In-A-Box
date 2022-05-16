@@ -20,6 +20,7 @@ class Client extends Model
      */
     protected $fillable = [
         'team_id',
+        'active',
         'name',
         'phone_number',
         'primary_user_id',
